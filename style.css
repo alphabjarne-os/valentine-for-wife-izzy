@@ -16,6 +16,32 @@ body {
     overflow: hidden;
 }
 
+/* --- NEU: Styling für die Musik-Buttons --- */
+.music-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ganz weit vorne */
+    display: flex;
+    gap: 10px; /* Abstand zwischen den Buttons */
+}
+
+.music-controls button {
+    background-color: rgba(122, 32, 72, 0.8); /* Halbtransparentes Rot */
+    color: #ffcce0;
+    border: 2px solid #ffcce0;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.music-controls button:hover {
+    background-color: #ff69b4;
+    color: #fff;
+}
+
 /* --- Fliegende Herzen Animation --- */
 #hearts-container {
     position: fixed;
@@ -40,7 +66,6 @@ body {
     animation: flyUp linear forwards;
 }
 
-/* Die runden Teile des Herzens */
 .heart::before,
 .heart::after {
     content: "";
@@ -53,25 +78,15 @@ body {
 .heart::before { left: calc(var(--heart-size) / -2); }
 .heart::after { top: calc(var(--heart-size) / -2); }
 
-/* Goldene Variante */
 .heart.gold {
     background: #ffd700;
     box-shadow: 0 0 10px #ffd700;
 }
 
-/* Die Flug-Animation */
 @keyframes flyUp {
-    0% {
-        opacity: 0;
-        transform: translateY(0) rotate(45deg) scale(0.5);
-    }
-    10% {
-        opacity: 0.8;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-110vh) rotate(45deg) scale(1.2); 
-    }
+    0% { opacity: 0; transform: translateY(0) rotate(45deg) scale(0.5); }
+    10% { opacity: 0.8; }
+    100% { opacity: 0; transform: translateY(-110vh) rotate(45deg) scale(1.2); }
 }
 
 
@@ -90,6 +105,9 @@ body {
     text-align: center; 
     transition: opacity 1s ease-in-out, visibility 1s;
     color: #fff;
+    /* Damit der Header nicht über den Musikbuttons liegt */
+    position: relative; 
+    z-index: 50;
 }
 
 body.letter-opened .header-container {
@@ -101,7 +119,7 @@ body.letter-opened .header-container {
     font-size: 1.5rem;
     font-weight: bold;
     margin-right: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; entfernt, damit das Herz besser aussieht */
 }
 
 .side-image {
@@ -166,10 +184,7 @@ body.letter-opened .letter-container {
 
 .the-note::-webkit-scrollbar { width: 8px; }
 .the-note::-webkit-scrollbar-track { background: transparent; }
-.the-note::-webkit-scrollbar-thumb {
-    background-color: rgba(214, 51, 108, 0.5);
-    border-radius: 4px;
-}
+.the-note::-webkit-scrollbar-thumb { background-color: rgba(214, 51, 108, 0.5); border-radius: 4px; }
 
 /* --- Animationen wenn geöffnet --- */
 body.letter-opened #envelope-btn {
@@ -185,20 +200,10 @@ body.letter-opened .the-note {
 }
 
 /* Styling für den Text im Zettel */
-.note-content {
-    text-align: center; 
-}
-.note-content h2 {
-    margin-top: 0;
-    color: #d6336c;
-    font-size: 2rem;
-}
-.note-content p {
-    line-height: 1.8; 
-    color: #444;
-    margin-bottom: 1.5em;
-    font-size: 1.1rem;
-}
+.note-content { text-align: center; }
+.note-content h2 { margin-top: 0; color: #d6336c; font-size: 2rem; }
+.note-content p { line-height: 1.8; color: #444; margin-bottom: 1.5em; font-size: 1.1rem; }
+.final-line { font-size: 1.3rem; color: #d6336c; margin-top: 30px; }
 
 /* Das GIF am Ende */
 .end-gif {
@@ -211,37 +216,16 @@ body.letter-opened .the-note {
 }
 
 /* =========================================
-   NEU: Optimierung für Handys (kleine Bildschirme)
+   Optimierung für Handys
    ========================================= */
 @media (max-width: 600px) {
-    /* Der Zettel wird auf Handys jetzt etwas schmaler */
-    .the-note {
-        width: 88%; /* KORRIGIERT: Von 95% auf 88% reduziert */
-        padding: 25px 15px; 
-        max-height: 75vh; 
-    }
-
-    /* Schriftgrößen etwas anpassen */
-    .note-content h2 {
-        font-size: 1.5rem;
-    }
-    .note-content p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    /* Header etwas kompakter machen */
-    .header-container {
-        padding: 15px;
-        flex-direction: column; 
-    }
-    .warning-text {
-        margin-right: 0;
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-    }
-    .side-image {
-        width: 80px;
-        height: 80px;
-    }
+    .the-note { width: 88%; padding: 25px 15px; max-height: 75vh; }
+    .note-content h2 { font-size: 1.5rem; }
+    .note-content p { font-size: 1rem; line-height: 1.6; }
+    .header-container { padding: 15px; flex-direction: column; }
+    .warning-text { margin-right: 0; margin-bottom: 10px; font-size: 1.2rem; }
+    .side-image { width: 80px; height: 80px; }
+    /* Buttons auf Handy etwas kleiner */
+    .music-controls { top: 10px; right: 10px; gap: 5px; }
+    .music-controls button { padding: 6px 10px; font-size: 0.8rem; }
 }
