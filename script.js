@@ -54,11 +54,12 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 12000);
+    }, 14000);
 }
 
 setInterval(createHeart, 400);
 
-for(let i = 0; i < 5; i++) {
+for(let i = 0; i < 15; i++) {
     setTimeout(createHeart, i * 200);
 }
+
