@@ -11,10 +11,16 @@
     <!-- Container für die fliegenden Hintergrund-Herzen -->
     <div id="hearts-container"></div>
 
+    <!-- NEU: Musik-Kontroll-Buttons oben rechts -->
+    <div class="music-controls">
+        <button id="play-btn">🎵 Play</button>
+        <button id="stop-btn">🔇 Stop</button>
+    </div>
+
     <!-- 1. Oberer Bereich: Warnung und Bild (Verschwindet später) -->
     <div class="header-container" id="main-header">
         <div class="warning-text">Click the Letter Wife❤️</div>
-        <!-- WICHTIG: ERSETZE DIESEN LINK durch dein eigenes Bild -->
+        <!-- ERSETZE DIESEN LINK durch dein eigenes Bild -->
         <img src="https://media1.tenor.com/m/HSxxt1scQXYAAAAd/cat-hugs.gif" alt="Ein Bild von uns" class="side-image">
     </div>
 
@@ -22,35 +28,38 @@
     <!-- 2. Interaktiver Brief Bereich -->
     <div class="letter-container" id="letter-box">
         
-        <!-- Der Briefumschlag -->
-        <img src="https://cdn-icons-png.flaticon.com/512/541/541769.png" alt="Briefumschlag öffnen" id="envelope-btn">
+        <!-- Der Briefumschlag (Das Bild, das man anklickt) -->
+        <!-- NEU: Hier wird jetzt deine lokale Datei 'mail.png' verwendet -->
+        <img src="mail.png" alt="Briefumschlag öffnen" id="envelope-btn">
 
         <!-- Der Zettel, der herauskommt -->
         <div class="the-note">
             <div class="note-content">
-                <!-- HIER DEINEN TEXT EINFÜGEN -->
-                <h2>Mein lieber Schatz,</h2>
                 
-                <p>Ich wollte dir diesen digitalen Brief schreiben, weil ein normales Blatt Papier niemals ausreichen würde, um dir zu sagen, was ich fühle. Wenn du das hier liest, hoffe ich, dass du lächelst. Die Atmosphäre hier ist jetzt etwas romantischer und dunkler, nur für uns.</p>
-                <p>Weißt du noch, wie wir uns kennengelernt haben? Seit diesem Moment hat sich mein Leben verändert. Du bringst mich jeden Tag zum Lachen, du unterstützt mich, wenn ich gestresst bin, und du bist einfach der wunderbarste Mensch, den ich kenne.</p>
-                <p>Ich liebe die Art, wie deine Augen leuchten, wenn du begeistert von etwas erzählst. Ich liebe es, wie wir stundenlang über alles und nichts reden können. Ich liebe sogar die kleinen Macken an dir, die dich erst so perfekt machen.</p>
-                <p>Dieser Text ist extra lang, damit du siehst, dass man hier wirklich viel schreiben kann. Der Brief passt sich jetzt auch besser an Handys an und ist nicht mehr ganz so breit. Nimm dir die Zeit, hier alles reinzuschreiben, was du ihr schon immer mal wieder sagen wolltest. Erinnerungen an den letzten Urlaub, Insider-Witze, Pläne für die Zukunft oder einfach nur eine Auflistung von 100 Gründen, warum du sie liebst.</p>
-                <p>Danke, dass du an meiner Seite bist. Danke für deine Geduld, deine Liebe und dein Verständnis. Ich freue mich auf all die Abenteuer, die noch vor uns liegen. Egal was passiert, ich weiß, dass wir es zusammen schaffen werden.</p>
-                <p>Du bist mein Ein und Alles. Schönen Valentinstag!</p>
-                <p>In Liebe,<br>Dein [Dein Name]</p>
+                <p>Es fühlt sich vielleicht etwas zu früh an um so etwas zu sagen, aber das ist mir egal, da es über meine wahren Gefühle geht. Ich war schon immer eine Person die leicht und schnell Gefühle entwickelt hat, ob es wirklich echte Liebe war kann ich nicht sagen. Aber was ich sagen kann ist, dass die Gefühle die ich für dich fühle echt sind und sich für mich nach echter Liebe anfühlen.</p>
+                
+                <p>Du gehst mir nicht mehr aus dem Kopf. Du bist mein letzter Gedanke vor dem Einschlafen und mein erster nach dem Aufwachen. Ich vermisse dich so unglaublich wenn wir gerade nichts zusammen machen. Ich freue mich jedes verdammte Mal wie ein kleines Kind, wenn ich eine Nachricht von dir bekomme, selbst wenn es nur ein Herz Emoji ist. Du lässt mich so geliebt fühlen wie noch keine Frau in meinem Leben.</p>
+                
+                <p>Ich würde dich gerne bis zu meinem Lebensende behalten. Bring mir bei wie du geliebt werden willst, ich möchte dir alles geben was ich kann. Ich gebe mir so viel Mühe wie ich kann, ich möchte Auseinandersetzungen fixen, ich möchte für dich da sein egal was du durchmachst, gute und schlechte Zeiten. Ich möchte alle Seiten von dir kennenlernen. Wenn du Probleme oder Sorgen hast, du kannst immer darüber mit mir reden. Mir ist egal was meine Freunde oder andere über diese Beziehung sagen, das geht keinen außer uns was an.</p>
+                
+                <p>Ich möchte mit dir diese lange Distanz überwinden und es wird die Zeit kommen wo wir zurückdenken und glücklich sein können, dass wir es geschafft haben. Und wer weiß, vielleicht können wir die Story irgendwann unseren Kindern erzählen.</p>
+                
+                <p>Wenn ich dir jemals das Gefühl gebe, dass du denkst dass ich dich nicht liebe oder dass du nicht die einzige für mich bist, sag es mir. Ich werde dir das Gegenteil beweisen, ich möchte Probleme zwischen uns gemeinsam aus dem Weg schaffen. Es ist auch vollkommen okay wenn du Zeit für dich brauchst, das ist auch wichtig, du musst es nur mit mir kommunizieren.</p>
+                
+                <p>Ich möchte dich lieben so wie du es verdienst, so wie es noch nie jemand gemacht hat, so wie du geliebt werden möchtest. Das alles meine ich wenn ich sage:</p>
+                
+                <p class="final-line"><strong>Ich liebe dich Isabella</strong> ❤️</p>
                 
                 <!-- GIF -->
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3A0a2F6eG54Zmh4aW54eG54Zmh4aW54eG54Zmh4aW54eG54Zmh4aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="Süßes GIF" class="end-gif">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3A0a2F6eG54Zmh4aW54eG54Zmh4aW54eG54Zmh4aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif" alt="Süßes GIF" class="end-gif">
             </div>
         </div>
 
     </div>
 
-    <!-- HIER IST DIE ÄNDERUNG: -->
-    <!-- 'autoplay' wurde hinzugefügt. 'loop' lässt es wiederholen. -->
-    <audio id="background-music" autoplay loop>
+    <!-- NEU: 'autoplay' wurde entfernt. Nur noch 'loop'. -->
+    <audio id="background-music" loop>
         <source src="music.mp3" type="audio/mpeg">
-        Dein Browser kann dieses Audio leider nicht abspielen.
     </audio>
 
     <script src="script.js"></script>
